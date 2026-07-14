@@ -2,6 +2,8 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 
 export default defineConfig({
+  base: "/z-obaly/",
+
   // Nastavení moderního překladače pro SASS (vypne otravná varování v konzoli)
   css: {
     preprocessorOptions: {
