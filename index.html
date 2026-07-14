@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZVOLSKÝ - Velkoobchod s obaly</title>
+    <!-- Vite si SCSS načte samo skrze main.js, ale pro přehlednost můžeme nechat link, Vite si s tím poradí -->
+    <script type="module" crossorigin src="/assets/main-9GbTBXmx.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/main-C12NhB4H.js">
+    <link rel="stylesheet" crossorigin href="/assets/main-Dg4m06f3.css">
+  </head>
+  <body>
+    <!-- NAVIGACE -->
+    <header class="main-header">
+      <div class="container header-container">
+        <a href="/" class="logo-link">
+          <img
+            src="data:image/png;base64,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"
+            alt="ZVOLSKÝ - Velkoobchod s obaly"
+            class="logo-img"
+          />
+        </a>
+
+        <nav class="main-nav">
+          <a href="/">Úvod</a>
+          <a href="/#o-nas">O nás</a>
+          <a href="/produkty.html">Produkty</a>
+        </nav>
+
+        <div class="header-cta">
+          <a href="/#kontakt" class="btn btn-primary">Poptat řešení</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO SEKCE -->
+      <section class="hero">
+        <div class="container hero-container">
+          <span class="sub-title">Spolehlivý B2B partner</span>
+          <h1>Obaly, které dokonale ochrání váš byznys</h1>
+          <p>
+            Dodáváme komplexní sortiment obalových materiálů pro e-shopy,
+            logistická centra i průmyslové podniky. Rychle, kvalitně a za
+            velkoobchodní ceny.
+          </p>
+          <div class="btn-group">
+            <a href="/produkty.html" class="btn btn-primary"
+              >Prohlédnout produkty</a
+            >
+            <a href="#o-nas" class="btn btn-outline">Zjistit více o nás</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- O NÁS -->
+      <section id="o-nas" class="about-section">
+        <div class="container about-container">
+          <div class="about-content">
+            <h2>ZVOLSKÝ: Profesionální obalová řešení</h2>
+            <p>
+              Jsme specializovaný velkoobchod s obaly, který si zakládá na
+              individuálním přístupu ke každému klientovi. Chápeme, že správný
+              obal nejen chrání zboží při přepravě, ale je také vizitkou vaší
+              firmy.
+            </p>
+            <p>
+              Ať už hledáte standardní kartonáž, fixační fólie nebo řešení na
+              míru pro váš provoz, zajistíme pro vás plynulé dodávky, abyste se
+              vy mohli soustředit na růst svého podnikání.
+            </p>
+            <ul class="benefits-list">
+              <li><span>✔</span> Široký sortiment skladem</li>
+              <li><span>✔</span> Individuální velkoobchodní ceny</li>
+              <li><span>✔</span> Rychlá expedice a doprava</li>
+              <li><span>✔</span> Odborné poradenství</li>
+            </ul>
+          </div>
+          <div class="about-badge">
+            <div class="badge-content">
+              <span class="icon">📦</span>
+              <span class="title">Vše pro bezpečné balení</span>
+              <span class="subtitle">od krabic po ochranné rohy</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOP PRODUKTY -->
+      <section class="top-products">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <h2>Vybíráme z našeho sortimentu</h2>
+              <p>Ukázka nejžádanějších produktů pro vaše každodenní balení.</p>
+            </div>
+            <a href="/produkty.html" class="link-more"
+              >Zobrazit všechny produkty <span>→</span></a
+            >
+          </div>
+
+          <div class="products-grid">
+            <div class="product-card">
+              <div class="product-icon">📦</div>
+              <h3>Kartonové krabice</h3>
+              <p>
+                Vysoce odolné klopové krabice v desítkách rozměrů ideální pro
+                e-shopy i průmysl.
+              </p>
+              <a href="/produkty.html" class="btn btn-secondary"
+                >Detail v katalogu</a
+              >
+            </div>
+            <div class="product-card">
+              <div class="product-icon">📦</div>
+              <h3>Stretch fólie</h3>
+              <p>
+                Vynikající průtažnost a pevnost pro dokonalou fixaci zboží na
+                paletách.
+              </p>
+              <a href="/produkty.html" class="btn btn-secondary"
+                >Detail v katalogu</a
+              >
+            </div>
+            <div class="product-card">
+              <div class="product-icon">📦</div>
+              <h3>Lepicí pásky</h3>
+              <p>Standardní i zesílené lepicí pásky pro bezpečné uzavření.</p>
+              <a href="/produkty.html" class="btn btn-secondary"
+                >Detail v katalogu</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- KONTAKTNÍ FORMULÁŘ -->
+      <section id="kontakt" class="contact-section">
+        <div class="container contact-container">
+          <div class="contact-info">
+            <h2>Nezávazná poptávka / Dotaz</h2>
+            <p>
+              Máte zájem o velkoobchodní nabídku na míru nebo potřebujete
+              poradit s výběrem správného materiálu? Zanechte nám zprávu a my se
+              vám ozveme zpět.
+            </p>
+            <div class="info-details">
+              <p><strong>ZVOLSKÝ s.r.o.</strong></p>
+              <p>📍 Sídlo / Sklad: Průmyslová 123, 100 00 Praha</p>
+              <p>📞 Telefon: +420 123 456 789</p>
+              <p>✉️ E-mail: info@zvolsky-obaly.cz</p>
+              <p>💼 IČO: 12345678 | DIČ: CZ12345678</p>
+            </div>
+          </div>
+
+          <div class="contact-form-wrapper">
+            <form
+              onsubmit="
+                alert('Formulář byl úspěšně odeslán!');
+                return false;
+              "
+              class="contact-form"
+            >
+              <div class="form-group">
+                <label>Jméno a příjmení / Firma</label>
+                <input type="text" required />
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>E-mail</label>
+                  <input type="email" required />
+                </div>
+                <div class="form-group">
+                  <label>Telefon</label>
+                  <input type="tel" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Vaše zpráva / Poptávka</label>
+                <textarea
+                  rows="4"
+                  id="contact-message"
+                  required
+                  placeholder="Jaké materiály poptáváte..."
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">
+                Odeslat poptávku
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+      <p>&copy; 2026 Filip Vít</p>
+    </footer>
+
+    <!-- Vite skript -->
+  </body>
+</html>

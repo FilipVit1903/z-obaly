@@ -1,0 +1,11 @@
+# Závislostní složky (stahují se znovu přes npm)
+node_modules/
+
+# Výstupy buildu
+dist/
+
+# Lokální konfigurační soubory a systémové soubory
+.env
+.env.local
+.DS_Store
+Thumbs.db
