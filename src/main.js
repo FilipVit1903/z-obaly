@@ -1,5 +1,5 @@
 // Import hlavního SCSS (Vite se postará o kompilaci)
-import "/src/scss/style.scss";
+import "./scss/style.scss";
 
 // 1. JavaScript Filtrování na samostatné stránce produkty.html
 window.filterCategory = function (category, event) {
