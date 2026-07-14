@@ -1,0 +1,452 @@
+@use "sass:color";
+
+// Tvoje definice brandových barev a proměnných
+$color-brand: #ccdc00; // Tvoje zelená z loga
+$color-dark: #373a40; // Tmavě šedá z loga
+$color-light: #f4f4f6; // Světle šedá na pozadí
+$color-white: #ffffff;
+$color-gray-text: #666666;
+$color-border: #e5e7eb;
+
+$font-sans: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+$transition-fast: all 0.2s ease-in-out;
+
+// Globální resety a základní nastavení
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: $font-sans;
+  color: $color-dark;
+  background-color: $color-white;
+}
+
+body {
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+// Komponenty: Tlačítka
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: $transition-fast;
+  border: 2px solid transparent;
+
+  &-primary {
+    background-color: $color-brand;
+    color: $color-dark;
+    &:hover {
+      background-color: color.adjust($color-brand, $lightness: -5%);
+    }
+  }
+
+  &-secondary {
+    background-color: $color-light;
+    color: $color-dark;
+    &:hover {
+      background-color: $color-brand;
+    }
+  }
+
+  &-outline {
+    border-color: rgba($color-white, 0.4);
+    color: $color-white;
+    &:hover {
+      background-color: rgba($color-white, 0.1);
+    }
+  }
+
+  &-block {
+    display: flex;
+    width: 100%;
+  }
+}
+
+// 1. Hlavička a navigace
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba($color-white, 0.95);
+  backdrop-filter: blur(4px);
+  border-b: 1px solid $color-border;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+  }
+
+  .logo-img {
+    height: 48px;
+    width: auto;
+  }
+
+  .main-nav {
+    display: flex;
+    gap: 32px;
+
+    a {
+      text-decoration: none;
+      color: $color-dark;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: $transition-fast;
+
+      &:hover {
+        color: color.adjust($color-brand, $lightness: -10%);
+      }
+    }
+  }
+}
+
+// 2. Hero sekce
+.hero {
+  background-color: $color-dark;
+  color: $color-white;
+  padding: 100px 0;
+  position: relative;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: color.adjust($color-dark, $lightness: 40%);
+    max-width: 650px;
+    margin-bottom: 32px;
+  }
+
+  .sub-title {
+    color: $color-brand;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .btn-group {
+    display: flex;
+    gap: 16px;
+  }
+}
+
+// 3. O nás sekce
+.about-section {
+  padding: 80px 0;
+  background-color: $color-light;
+
+  .about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 24px;
+  }
+  p {
+    color: $color-gray-text;
+    margin-bottom: 16px;
+  }
+
+  .benefits-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+    font-weight: 600;
+
+    span {
+      color: $color-brand;
+      margin-right: 8px;
+      font-size: 1.2rem;
+    }
+  }
+
+  .about-badge {
+    background-color: color.adjust($color-light, $lightness: -5%);
+    border: 1px solid color.adjust($color-light, $lightness: -10%);
+    border-radius: 8px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .icon {
+      font-size: 4rem;
+      display: block;
+      margin-bottom: 12px;
+    }
+    .title {
+      font-weight: 700;
+      font-size: 1.2rem;
+      display: block;
+    }
+    .subtitle {
+      color: $color-gray-text;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// 4. Mřížka produktů (Společná pro Home i Katalog)
+.top-products,
+.catalog-section {
+  padding: 80px 0;
+
+  .section-header,
+  .catalog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 48px;
+
+    h2,
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      color: $color-gray-text;
+      margin-top: 8px;
+    }
+  }
+
+  .link-more {
+    color: $color-dark;
+    font-weight: 700;
+    text-decoration: none;
+    &:hover {
+      color: color.adjust($color-brand, $lightness: -15%);
+    }
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 32px;
+  }
+
+  .product-card {
+    background-color: $color-white;
+    border: 1px solid $color-border;
+    border-radius: 8px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    transition: $transition-fast;
+
+    &:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+      border-color: color.adjust($color-border, $lightness: -10%);
+    }
+
+    .product-icon {
+      font-size: 3rem;
+      background-color: $color-light;
+      height: 180px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .category-tag {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: color.adjust($color-dark, $lightness: 30%);
+      margin-bottom: 4px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+    p {
+      color: $color-gray-text;
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+    .btn {
+      margin-top: auto;
+    }
+  }
+}
+
+// 5. Kontaktní sekce s formulářem
+.contact-section {
+  background-color: $color-dark;
+  color: $color-white;
+  padding: 80px 0;
+
+  .contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 24px;
+  }
+  p {
+    color: color.adjust($color-dark, $lightness: 40%);
+    margin-bottom: 32px;
+  }
+
+  .info-details p {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: color.adjust($color-dark, $lightness: 40%);
+    strong {
+      font-size: 1.1rem;
+      color: $color-white;
+    }
+  }
+
+  .contact-form-wrapper {
+    background-color: $color-white;
+    color: $color-dark;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .contact-form {
+    .form-group {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+      input,
+      textarea {
+        padding: 10px 14px;
+        border: 1px solid $color-border;
+        border-radius: 6px;
+        font-family: $font-sans;
+        font-size: 0.95rem;
+        &:focus {
+          outline: 2px solid $color-brand;
+        }
+      }
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+  }
+}
+
+// 6. Katalogové filtry
+.catalog-section {
+  background-color: $color-light;
+  min-height: calc(100vh - 140px);
+
+  .catalog-header {
+    text-align: center;
+    display: block;
+    margin-bottom: 32px;
+  }
+
+  .filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+
+    .filter-btn {
+      background-color: $color-white;
+      color: $color-dark;
+      border: none;
+      padding: 10px 24px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+      transition: $transition-fast;
+
+      &:hover {
+        background-color: color.adjust($color-white, $lightness: -5%);
+      }
+      &.active {
+        background-color: $color-dark;
+        color: $color-white;
+      }
+    }
+  }
+}
+
+// 7. Footer
+.main-footer {
+  background-color: color.adjust($color-dark, $lightness: -10%);
+  color: color.adjust($color-dark, $lightness: 20%);
+  text-align: center;
+  padding: 32px 0;
+  font-size: 0.9rem;
+  border-top: 1px solid color.adjust($color-dark, $lightness: -5%);
+}
+
+// Responzivita (Mobilní telefony a tablety)
+@media (max-width: 768px) {
+  .main-header .main-nav {
+    display: none;
+  } // Zjednodušení pro ukázku
+  .about-section .about-container,
+  .contact-section .contact-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .contact-section .contact-form-wrapper {
+    padding: 24px;
+  }
+  .contact-form .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+}
